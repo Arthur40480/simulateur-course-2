@@ -6,20 +6,12 @@ public class Race {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
-		// Déclaration de ma HashMap speed :
-		// La clé est la vitesse, et la valeur est la distance (en m) parcourue à cette vitesse :
-		HashMap<Integer, Integer> speed = new HashMap<>();
-		speed.put(0, 0);
-		speed.put(1, 23);
-		speed.put(2, 46);
-		speed.put(3, 69);
-		speed.put(4, 92);
-		speed.put(5, 115);
-		speed.put(6, 138);
-		
+		// Déclaration de mon Tableau de Integer speed :
+		int[] speed = {0, 23, 46, 69, 92, 115, 138 };
+
 		// Tableau à plusieurs dimensions pour représenter les jets de dé, ainsi que la vitesse actuelle :
 		// 3 est l'équivalent de "Discalifier" :
-		int[][] throwOfDice = {
+		int[][] tabThrowOfDice = {
 				{0, 1, 1, 1, 2, 2},		// <- Vitesse actuelle 0
 				{0, 0, 1, 1, 1, 2}, 	// <- Vitesse actuelle 1
 				{0, 0, 1, 1, 1, 2}, 	// <- Vitesse actuelle 2
@@ -52,13 +44,14 @@ public class Race {
 		for(int i = 0; i < numberHorses; i++) {
 			// On viens créer une HashMap pour chaque cheval :
 			HashMap<String, Integer> horse = new HashMap<>();
-			horse.put("Numero", (i + 1)); // Sont numéro
-			horse.put("Vitesse", 0); // Sa vitesse
-			horse.put("Distance", 0); // Sa distance parcourue
-			
+			horse.put("Numero", (i + 1)); 	// Sont numéro
+			horse.put("Vitesse", 0); 		// Sa vitesse
+			horse.put("Distance", 0); 		// Sa distance parcourue (en m)
+			horse.put("Chrono", 0);			// Son temps (en s)
 			// On ajoute chaque HashMap à notre ArrayList horseList :
 			horseList.add(horse);
 		}
+		Launch.startGame(scanner, horseList, speed, tabThrowOfDice);
 		scanner.close();
 	}
 
