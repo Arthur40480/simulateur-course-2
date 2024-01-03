@@ -41,7 +41,7 @@ public class Race {
 		System.out.println();
 		System.out.print("Veuillez saisir votre choix : ");
 		
-		int userChoice = scanner.nextInt();
+		int userChoice = Verification.verificationUserChoice(scanner);
 		
 		System.out.print("Veuillez indiquer le nombre de chevaux dans la course (12 - 20) : ");
 		
@@ -59,6 +59,7 @@ public class Race {
 			// On ajoute chaque HashMap à notre ArrayList horseList :
 			horseList.add(horse);
 		}
+		scanner.close();
 	}
 
 }
