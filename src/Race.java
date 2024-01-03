@@ -51,7 +51,7 @@ public class Race {
 			// On ajoute chaque HashMap à notre ArrayList horseList :
 			horseList.add(horse);
 		}
-		Launch.startGame(scanner, horseList, speed, tabThrowOfDice);
+		Launch.startRace(scanner, horseList, speed, tabThrowOfDice);
 		scanner.close();
 	}
 
