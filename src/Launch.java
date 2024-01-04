@@ -15,7 +15,7 @@ public class Launch {
 		// Boucle tant que qu'il y à encore un cheval qui à une distance inférieur à 2400 et qui n'est pas disqualifier (DQ = 0) alors on boucle :
 		while(horseList.stream().anyMatch(horse ->(horse.get("Distance") < 2400 && horse.get("DQ") == 0))) {
 						
-			System.out.println("                            TOUR " + turnNumber);
+			System.out.println("                                     TOUR " + turnNumber);
 			System.out.println("------------------------------------------------------------------------------------");
 			// Pour chaque cheval dans la liste de cheval :
 			horseList.stream().forEach(horse -> {
@@ -45,7 +45,7 @@ public class Launch {
 						// On assigne la nouvelle distance parcourue qui est égale à : distance parcourue + TableauDeVitesse[Vitesse Actuelle] :
 						horse.put("Distance", (horse.get("Distance") + speed[horse.get("Vitesse")]));
 						
-						// Si le cheval viens de faire 2400 ou plus, alors on l'ajoute à la liste des chevaux arrivés :
+						// Si le cheval viens de faire 2400 ou plus, et qu'il n'y à pas déjà 5 chevaux, alors :
 						if(horse.get("Distance") >= 2400 && ranking.size() < 5) {
 							ranking.add(horse);
 						}
@@ -60,10 +60,22 @@ public class Launch {
 					}
 				}
 			});
-			turnNumber++;
+			
 			System.out.println();
-			System.out.println("------------------------------------------------------------------------------------");
+			System.out.print("Tour suivant ? (Oui/Non) :");
+			String userChoice = scanner.next();
+			
+			// Si la saisie utilisateur = "Non, non, Non" alors :
+			if(userChoice.equals("Non") || userChoice.equals("non") || userChoice.equals("NON")) {
+				System.out.println("Arrêt de la course !");
+				System.exit(0);
+				
+			// Sinon :	
+			} else {
+				turnNumber++;
+				System.out.println();
+				System.out.println("------------------------------------------------------------------------------------");
+			}
 		}
-		System.out.println(ranking);
 	}
 }
