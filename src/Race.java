@@ -18,8 +18,10 @@ public class Race {
 				{-1, 0, 0, 1, 1, 1}, 	// <- Vitesse actuelle 3
 				{-1, 0, 0, 0, 1, 1}, 	// <- Vitesse actuelle 4
 				{-2, -1, 0, 0, 0, 1}, 	// <- Vitesse actuelle 5
-				{-2, -1, 1, 1, 2, 3}, 	// <- Vitesse actuelle 6
+				{-2, -1, 0, 0, 0, 3}, 	// <- Vitesse actuelle 6
 		};
+		
+		System.out.println(tabThrowOfDice[6][2]);
 		
 		// Déclaration de mon ArrayList horseList qui contiendra une HashMap pour chaque cheval participant :
 		ArrayList<HashMap<String, Integer>> horseList = new ArrayList<>();
@@ -46,9 +48,9 @@ public class Race {
 			HashMap<String, Integer> horse = new HashMap<>();
 			horse.put("Numero", (i + 1)); 	// Sont numéro
 			horse.put("Vitesse", 0); 		// Sa vitesse
-			horse.put("Distance", 2370); 		// Sa distance parcourue (en m)
+			horse.put("Distance", 1000); 	// Sa distance parcourue (en m)
 			horse.put("Chrono", 0);			// Son temps (en s)
-			horse.put("DQ", 0);				// Si ilest disqualifier ou non
+			horse.put("DQ", 0);				// Si il est disqualifier ou non (0 = Non & 1 = Oui)
 			// On ajoute chaque HashMap à notre ArrayList horseList :
 			horseList.add(horse);
 		}
