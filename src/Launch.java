@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class Launch {
 
-	public static void startRace(Scanner scanner, ArrayList<HashMap<String, Integer>> horseList, int[] speed, int[][] throwOfDice ) {
+	public static void startRace(Scanner scanner, ArrayList<HashMap<String, Integer>> horseList, int[] speed, int[][] throwOfDice, int userChoiceTypeOfRace ) {
 		Random random = new Random();
 		int turnNumber = 1;
 		ArrayList<HashMap<String, Integer>> ranking = new ArrayList<>();
@@ -77,5 +77,6 @@ public class Launch {
 				System.out.println("------------------------------------------------------------------------------------");
 			}
 		}
+		Display.rankingDisplay(userChoiceTypeOfRace, ranking);
 	}
 }

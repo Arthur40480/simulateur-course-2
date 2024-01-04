@@ -35,7 +35,7 @@ public class Race {
 		System.out.println();
 		System.out.print("Veuillez saisir votre choix : ");
 		
-		int userChoice = Verification.verificationUserChoice(scanner);
+		int userChoiceTypeOfRace = Verification.verificationUserChoice(scanner);
 		
 		System.out.print("Veuillez indiquer le nombre de chevaux dans la course (12 - 20) : ");
 		
@@ -48,13 +48,13 @@ public class Race {
 			HashMap<String, Integer> horse = new HashMap<>();
 			horse.put("Numero", (i + 1)); 	// Sont numéro
 			horse.put("Vitesse", 0); 		// Sa vitesse
-			horse.put("Distance", 1000); 	// Sa distance parcourue (en m)
+			horse.put("Distance", 2200); 	// Sa distance parcourue (en m)
 			horse.put("Chrono", 0);			// Son temps (en s)
 			horse.put("DQ", 0);				// Si il est disqualifier ou non (0 = Non & 1 = Oui)
 			// On ajoute chaque HashMap à notre ArrayList horseList :
 			horseList.add(horse);
 		}
-		Launch.startRace(scanner, horseList, speed, tabThrowOfDice);
+		Launch.startRace(scanner, horseList, speed, tabThrowOfDice, userChoiceTypeOfRace);
 		scanner.close();
 	}
 
