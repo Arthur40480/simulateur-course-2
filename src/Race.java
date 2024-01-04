@@ -48,7 +48,7 @@ public class Race {
 			HashMap<String, Integer> horse = new HashMap<>();
 			horse.put("Numero", (i + 1)); 	// Sont numéro
 			horse.put("Vitesse", 0); 		// Sa vitesse
-			horse.put("Distance", 2200); 	// Sa distance parcourue (en m)
+			horse.put("Distance", 0); 	// Sa distance parcourue (en m)
 			horse.put("Chrono", 0);			// Son temps (en s)
 			horse.put("DQ", 0);				// Si il est disqualifier ou non (0 = Non & 1 = Oui)
 			// On ajoute chaque HashMap à notre ArrayList horseList :
